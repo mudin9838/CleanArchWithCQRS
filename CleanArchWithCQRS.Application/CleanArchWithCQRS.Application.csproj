@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Blogs\Commands\CreateBlog\" />
+    <Folder Include="Blogs\Commands\DeleteBlog\" />
+    <Folder Include="Blogs\Commands\UpdateBlog\" />
+    <Folder Include="Blogs\Queries\GetBlogs\" />
+    <Folder Include="Blogs\Queries\GetBlogsById\" />
+    <Folder Include="Common\Behaviours\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Common\Mappings\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchWithCQRS.ADomain\CleanArchWithCQRS.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
