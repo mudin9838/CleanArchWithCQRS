@@ -1,4 +1,4 @@
-﻿using CleanArchWithCQRS.Application.Blogs.Queries;
+﻿using CleanArchWithCQRS.Application.Blogs.Queries.GetBlogs;
 using MediatR;
 
 namespace CleanArchWithCQRS.Application.Blogs.Commands.CreateBlog

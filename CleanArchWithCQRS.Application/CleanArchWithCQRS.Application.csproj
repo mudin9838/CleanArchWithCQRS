@@ -7,9 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Blogs\Commands\DeleteBlog\" />
-    <Folder Include="Blogs\Commands\UpdateBlog\" />
-    <Folder Include="Blogs\Queries\GetBlogs\" />
     <Folder Include="Common\Behaviours\" />
     <Folder Include="Common\Exceptions\" />
   </ItemGroup>

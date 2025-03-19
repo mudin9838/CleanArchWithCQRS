@@ -1,7 +1,7 @@
 ﻿using CleanArchWithCQRS.Application.Common.Mappings;
 using CleanArchWithCQRS.Domain.Entity;
 
-namespace CleanArchWithCQRS.Application.Blogs.Queries
+namespace CleanArchWithCQRS.Application.Blogs.Queries.GetBlogs
 {
     public class BlogVm : IMapFrom<Blog>
     {

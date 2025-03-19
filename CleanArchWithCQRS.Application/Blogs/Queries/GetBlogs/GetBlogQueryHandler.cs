@@ -2,7 +2,7 @@
 using CleanArchWithCQRS.Domain.Repository;
 using MediatR;
 
-namespace CleanArchWithCQRS.Application.Blogs.Queries
+namespace CleanArchWithCQRS.Application.Blogs.Queries.GetBlogs
 {
     public class GetBlogQueryHandler : IRequestHandler<GetBlogQuery, List<BlogVm>>
     {

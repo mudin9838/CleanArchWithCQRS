@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CleanArchWithCQRS.Application.Blogs.Queries.GetBlogs;
+using MediatR;
 
 namespace CleanArchWithCQRS.Application.Blogs.Queries.GetBlogsById
 {

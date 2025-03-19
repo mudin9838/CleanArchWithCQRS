@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CleanArchWithCQRS.Application.Blogs.Queries.GetBlogs;
 using CleanArchWithCQRS.Domain.Repository;
 using MediatR;
 

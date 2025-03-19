@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CleanArchWithCQRS.Application.Blogs.Queries;
+using CleanArchWithCQRS.Application.Blogs.Queries.GetBlogs;
 using CleanArchWithCQRS.Domain.Entity;
 using CleanArchWithCQRS.Domain.Repository;
 using MediatR;
