@@ -1,6 +1,9 @@
-﻿namespace CleanArchWithCQRS.Application.Blogs.Queries
+﻿using CleanArchWithCQRS.Application.Common.Mappings;
+using CleanArchWithCQRS.Domain.Entity;
+
+namespace CleanArchWithCQRS.Application.Blogs.Queries
 {
-    public class BlogVm
+    public class BlogVm : IMapFrom<Blog>
     {
         public int Id { get; set; }
         public string Name { get; set; }
