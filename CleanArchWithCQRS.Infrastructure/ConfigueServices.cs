@@ -15,10 +15,11 @@ namespace CleanArchWithCQRS.Infrastructure
             //register dbcontext
             services.AddDbContext<BlogDbContext>(options =>
              {
-                 options.UseSqlite(configuration.GetConnectionString("BlogDbConnection") ?? throw new InvalidOperationException("Connection string 'BlogDbConnection' not found."));
+                 options.UseSqlite(configuration.GetConnectionString("BlogDbContext") ?? throw new InvalidOperationException("Connection string 'BlogDbConnection' not found."));
              });
 
             services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddTransient<IDataSeeder, DataSeeder>();
             return services;
         }
     }

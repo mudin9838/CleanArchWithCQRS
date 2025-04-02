@@ -1,20 +1,13 @@
 ﻿using Bogus;
 using CleanArchWithCQRS.Domain.Entity;
-using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchWithCQRS.Infrastructure.Data
 {
-    public class BlogDbContext : DbContext
+    public static class BlogDbContextSeed
     {
-        public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options)
-        {
-        }
-
-        public DbSet<Blog> Blogs { get; set; }
-
         public static void SeedData(BlogDbContext context)
         {
-            if (!context.Blogs.Any()) // Check if data already exists
+            if (!context.Blogs.Any()) // Avoid seeding if there's already data
             {
                 var faker = new Faker();
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bogus;
 using CleanArchWithCQRS.Application.Blogs.Queries.GetBlogs;
 using CleanArchWithCQRS.Domain.Entity;
 using CleanArchWithCQRS.Domain.Repository;
@@ -21,12 +22,22 @@ namespace CleanArchWithCQRS.Application.Blogs.Commands.CreateBlog
 
         public async Task<BlogVm> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
         {
-            var blogEntity = new Blog() { Author = request.Author, Description = request.Description, Name = request.Name };
+            // If you want to use Bogus to generate random data when no data is provided, for instance
+            var faker = new Faker();
 
+            // If no Author or Name is provided in the request, we generate random values
+            var blogEntity = new Blog
+            {
+                Name = string.IsNullOrWhiteSpace(request.Name) ? faker.Company.CompanyName() : request.Name,
+                Description = string.IsNullOrWhiteSpace(request.Description) ? faker.Lorem.Paragraph() : request.Description,
+                Author = string.IsNullOrWhiteSpace(request.Author) ? faker.Name.FullName() : request.Author,
+            };
+
+            // Save to the repository
             var result = await _blogRepository.AddBlogAsync(blogEntity);
-            return _mapper.Map<BlogVm>(result); //since our return type expect BlogVm, we converted blog to BlogVm
 
-
+            // Map the result to a BlogVm (ViewModel)
+            return _mapper.Map<BlogVm>(result);
         }
     }
 }
